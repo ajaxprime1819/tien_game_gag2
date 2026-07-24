@@ -1,1 +1,234 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cày Thuê - Tiền Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+        }
 
+        body {
+            background-color: #f3f5f8;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+        }
+
+        /* HEADER TITLE */
+        .page-title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 900;
+            color: #1e1135;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .page-title span {
+            color: #7c3aed;
+        }
+
+        .page-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: #1e1135;
+            margin: 8px auto 15px auto;
+            border-radius: 2px;
+        }
+
+        .sub-notice {
+            text-align: center;
+            font-size: 13px;
+            font-weight: 700;
+            color: #e11d48;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            letter-spacing: 0.5px;
+        }
+
+        /* FORM CARD */
+        .form-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            padding: 25px 30px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .step-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+            font-weight: 700;
+            color: #1e1135;
+            margin-bottom: 12px;
+        }
+
+        .step-num {
+            background-color: #2563eb;
+            color: #ffffff;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+        }
+
+        .field-label {
+            display: block;
+            font-size: 13px;
+            font-weight: 700;
+            color: #475569;
+            margin-bottom: 6px;
+        }
+
+        /* INPUT & SELECT */
+        .custom-select, .custom-textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.2s ease;
+            background-color: #fff;
+        }
+
+        .custom-select:focus, .custom-textarea:focus {
+            border-color: #7c3aed;
+        }
+
+        .info-box {
+            background-color: #f8fafc;
+            border: 1px dashed #cbd5e1;
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 14px;
+            color: #475569;
+            line-height: 1.5;
+        }
+
+        .custom-textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .char-count {
+            text-align: right;
+            font-size: 12px;
+            color: #94a3b8;
+            margin-top: 4px;
+        }
+
+        /* ACTION AREA */
+        .action-area {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .warning-text {
+            font-size: 13px;
+            color: #64748b;
+            margin-bottom: 12px;
+        }
+
+        .btn-submit {
+            background-color: #22c55e;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 700;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #16a34a;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <h1 class="page-title">CÀY THUÊ - <span>TIỀN GAME</span></h1>
+        <p class="sub-notice">Điền đúng thông tin cần thiết hoặc liên hệ Admin | Cuối trang | Để hoàn thành đơn</p>
+
+        <div class="form-card">
+            <form action="#" method="POST">
+                
+                <!-- BƯỚC 1: CHỌN GÓI CẦN THUÊ -->
+                <div class="form-group">
+                    <div class="step-title">
+                        <span class="step-num">1</span>
+                        <span>Chọn Gói Cần Thuê</span>
+                    </div>
+                    <select class="custom-select" required>
+                        <option value="" disabled selected>Tìm và chọn gói dịch vụ cần thuê...</option>
+                        <option value="1">5B TIỀN GAME (KHÔNG CẦN ĐIỀN MẬT KHẨU) - 80,000 đ</option>
+                        <option value="2">1B TIỀN GAME (KHÔNG CẦN ĐIỀN MẬT KHẨU) - 20,000 đ</option>
+                    </select>
+                </div>
+
+                <!-- BƯỚC 2: XÁC NHẬN ĐẶT HÀNG -->
+                <div class="form-group">
+                    <div class="step-title">
+                        <span class="step-num">2</span>
+                        <span>Xác Nhận Đặt Hàng</span>
+                    </div>
+                    <div class="info-box">
+                        📌 Quý khách vui lòng kiểm tra kỹ gói đã chọn trước khi tạo đơn. Sau khi tạo đơn, vui lòng liên hệ Admin để nhận tiền game mà không cần cung cấp mật khẩu.
+                    </div>
+                </div>
+
+                <!-- BƯỚC 3: GHI CHÚ & XÁC NHẬN -->
+                <div class="form-group">
+                    <div class="step-title">
+                        <span class="step-num">3</span>
+                        <span>Ghi Chú & Xác Nhận</span>
+                    </div>
+                    <label class="field-label">Ghi Chú</label>
+                    <textarea class="custom-textarea" maxlength="500" placeholder="Nhập ghi chú cho admin nếu có..."></textarea>
+                    <div class="char-count">0 / 500</div>
+                </div>
+
+                <!-- NÚT TẠO ĐƠN HÀNG -->
+                <div class="action-area">
+                    <p class="warning-text">Vui lòng chọn gói cần thuê</p>
+                    <button type="submit" class="btn-submit">
+                        🛒 Tạo Đơn Hàng
+                    </button>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+
+</body>
+</html>

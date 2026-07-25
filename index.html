@@ -180,7 +180,8 @@
         <p class="sub-notice">Điền đúng thông tin cần thiết hoặc liên hệ Admin | Cuối trang | Để hoàn thành đơn</p>
 
         <div class="form-card">
-            <form action="#" method="POST">
+            <!-- Thêm id="moneyOrderForm" -->
+            <form id="moneyOrderForm">
                 
                 <!-- BƯỚC 1: CHỌN GÓI CẦN THUÊ -->
                 <div class="form-group">
@@ -188,10 +189,11 @@
                         <span class="step-num">1</span>
                         <span>Chọn Gói Cần Thuê</span>
                     </div>
-                    <select class="custom-select" required>
+                    <!-- Thêm id="moneySelect" -->
+                    <select id="moneySelect" class="custom-select" required>
                         <option value="" disabled selected>Tìm và chọn gói dịch vụ cần thuê...</option>
-                        <option value="1">5B TIỀN GAME  - 60,000 đ</option>
-                        <option value="2">1B TIỀN GAME  - 15,000 đ</option>
+                        <option value="5B TIỀN GAME - 60,000 đ">5B TIỀN GAME - 60,000 đ</option>
+                        <option value="1B TIỀN GAME - 15,000 đ">1B TIỀN GAME - 15,000 đ</option>
                     </select>
                 </div>
 
@@ -213,8 +215,9 @@
                         <span>Ghi Chú & Xác Nhận</span>
                     </div>
                     <label class="field-label">Ghi Chú</label>
-                    <textarea class="custom-textarea" maxlength="500" placeholder="Nhập ghi chú cho admin nếu có..."></textarea>
-                    <div class="char-count">0 / 500</div>
+                    <!-- Thêm id="noteInput" -->
+                    <textarea id="noteInput" class="custom-textarea" maxlength="500" placeholder="Nhập ghi chú cho admin nếu có..."></textarea>
+                    <div class="char-count"><span id="charCount">0</span> / 500</div>
                 </div>
 
                 <!-- NÚT TẠO ĐƠN HÀNG -->
@@ -230,5 +233,32 @@
 
     </div>
 
+    <!-- SCRIPT CHUYỂN HƯỚNG BẤM TẠO ĐƠN -->
+    <script>
+        // Đếm số ký tự ô Ghi chú
+        const noteInput = document.getElementById('noteInput');
+        const charCount = document.getElementById('charCount');
+        if (noteInput) {
+            noteInput.addEventListener('input', function() {
+                charCount.textContent = this.value.length;
+            });
+        }
+
+        // Bấm nút Tạo Đơn Hàng -> Chuyển hướng Link
+        document.getElementById('moneyOrderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const selectedOption = document.getElementById('moneySelect').value;
+
+            if (selectedOption) {
+                alert("✅ Tạo đơn thành công!\nGói đã chọn: " + selectedOption + "\n\nĐang chuyển hướng sang trang liên hệ Admin...");
+                
+                // THAY ĐỔI ĐƯỜNG LINK CỦA BẠN TẠI ĐÂY (VD: Link Zalo, Fanpage Facebook, Chat Telegram...)
+                window.location.href = "https://zalo.me/0392192506"; 
+            } else {
+                alert("⚠️ Vui lòng chọn gói tiền game trước khi bấm tạo đơn!");
+            }
+        });
+    </script>
 </body>
 </html>
